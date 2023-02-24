@@ -24,6 +24,8 @@ export default () => html`
 <input type="message" placeholder="Type Your Message" id="message">
 </p>
 
+<p>hello</p>
+
 <button>Submit</button>
 </form>
 `;
