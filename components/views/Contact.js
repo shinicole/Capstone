@@ -1,31 +1,39 @@
 import html from "html-literal";
 
 export default () => html`
-<section id="Contact">
+  <div class="contact-box">
+    <h1>Contact Us</h1>
+    <p>
+      Questions or concerns? Contact us and a representative will get back to
+      you as soon as possible.
+    </p>
 
-
-<h1> Contact Us</h1>
-
-<p>Any questions or concerns? Get in touch with us and a representative will get back to you within 24-48 hours</p></>
-
-<form action="/Contact">
-<p>
-<label for="Name">Enter full name:</label>
-<input id="Name" type="text" placeholder="Enter Your Name">
-</p>
-
-<p>
-<label for="email">Enter you email:</label>
-<input type="email" placeholder="Enter Email Address" id="email">
-</p>
-
-<p>
-<label for="message">Enter a message:</label>
-<input type="message" placeholder="Type Your Message" id="message">
-</p>
-
-<p>hello</p>
-
-<button>Submit</button>
-</form>
+    <form>
+      <p>
+        <label for="Name"></label>
+        <input id="Name" type="text" placeholder="Enter Your Name" size="40" />
+      </p>
+      <p>
+        <label for="email"></label>
+        <input
+          type="email"
+          placeholder="Enter Email Address"
+          id="email"
+          size="40"
+        />
+      </p>
+      <p>
+        <label for="message"></label>
+        <textarea
+          name="message"
+          placeholder="Type Message"
+          rows="5"
+          cols="40"
+        ></textarea>
+      </p>
+      <p>
+        <button>Submit</button>
+      </p>
+    </form>
+  </div>
 `;
