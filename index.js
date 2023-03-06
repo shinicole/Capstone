@@ -32,14 +32,14 @@ router.hooks({
     const view =
       params && params.data && params.data.view
         ? capitalize(params.data.view)
-        : "Home"; // Add a switch case statement to handle multiple routes
+        : "Home";
     // Add a switch case statement to handle multiple routes
     switch (view) {
       case "Home":
         axios
           .get(
             // Replace the key provided here with your own key from openweathermap
-            `https://www.eventbriteapi.com/v3/users/me/?token=XJQ42NG46ZMK42YQQUAT=${process.env.Event_Brite_MAP_API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?q=st%20louis&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
           )
           .then(response => {
             console.log(response.data);
@@ -59,6 +59,22 @@ router.hooks({
               response.data.weather[0].description;
             console.log(store.Home.weather);
 
+            done();
+          });
+        break;
+      // New Case for Pizza View
+      case "Pizza":
+        // New Axios get request utilizing already made environment variable
+        axios
+          .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
+          .then(response => {
+            // Storing retrieved data in state
+
+            store.Pizza.pizzas = response.data;
+            done();
+          })
+          .catch(error => {
+            console.log("It puked", error);
             done();
           });
         break;

@@ -1,4 +1,4 @@
-export { default as Events } from "./Events.js";
-export { default as Home } from "./Home.js";
-export { default as Contact } from "./Contact.js";
-export { default as Members } from "./Members.js";
+export { default as Events } from "./Events";
+export { default as Home } from "./Home";
+export { default as Contact } from "./Contact";
+export { default as Members } from "./Members";
